@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Instagram, Music2, User, Laptop, ScrollText, Puzzle, Wrench, Palette, GraduationCap, Atom, FileCode2, Type, Wind, PanelsTopLeft, Table2, LayoutDashboard, School, CheckCircle, Star, Users } from "lucide-react"
 
 // 🔥 Floating Background Gradient Animation
 const FloatingBackground = () => (
@@ -99,41 +100,63 @@ function App() {
           <p className="text-xs text-black mt-1">Redondo Rui Paslan</p>
 
           <div className="flex gap-3 mt-4">
-            <button
-              onClick={toggleContactModal}
-              className="px-5 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 transition-all duration-300 rounded-full text-xs shadow-md hover:scale-105"
-            >
-              ✉️ Contact
-            </button>
+           <button
+  onClick={toggleContactModal}
+  className="px-5 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 transition-all duration-300 rounded-full text-xs shadow-md hover:scale-105 inline-flex items-center gap-2"
+>
+  <Mail className="w-4 h-4" />
+  Contact
+</button>
           </div>
 
           {/* Skills */}
           <div className="mt-6 w-full">
             <div className="bg-gray-100/50 border border-red-100/30 rounded-xl p-4 w-full text-center shadow-inner">
-              <h3 className="text-sm font-bold mb-3 bg-black px-6 py-1 rounded-md inline-block shadow-sm">
-                🛠 Skills
-              </h3>
-              <div className="space-y-4 text-left text-xs text-gray-700">
-                {[
-                  { name: "🎨 UI/UX Design", percent: "90%", width: skillWidths.figma, color: "bg-red-500" },
-                  { name: "💻 Front-End Developer", percent: "85%", width: skillWidths.tailwind, color: "bg-red-400" },
-                ].map((skill, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between mb-1">
-                      <span>{skill.name}</span>
-                      <span className="text-gray-500">{skill.percent}</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: skill.width }}
-                        transition={{ duration: 1, delay: idx * 0.3 }}
-                        className={`${skill.color} h-3 rounded-full shadow-md`}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h3 className="text-sm font-bold mb-3 bg-black px-6 py-1 rounded-md inline-flex items-center gap-2 shadow-sm text-white">
+  <Wrench className="w-4 h-4 text-red-500" />
+  Skills
+</h3>
+              <div className="space-y-4 text-left text-xs text-black">
+  {[
+    {
+      name: (
+        <span className="inline-flex items-center gap-2">
+          <Palette className="w-4 h-4 text-red-500" />
+          UI/UX Design
+        </span>
+      ),
+      percent: "90%",
+      width: skillWidths.figma,
+      color: "bg-red-500",
+    },
+    {
+      name: (
+        <span className="inline-flex items-center gap-2">
+          <Laptop className="w-4 h-4 text-red-400" />
+          Front-End Developer
+        </span>
+      ),
+      percent: "85%",
+      width: skillWidths.tailwind,
+      color: "bg-red-400",
+    },
+  ].map((skill, idx) => (
+    <div key={idx}>
+      <div className="flex justify-between mb-1">
+        <span>{skill.name}</span>
+        <span className="text-gray-500">{skill.percent}</span>
+      </div>
+      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: skill.width }}
+          transition={{ duration: 1, delay: idx * 0.3 }}
+          className={`${skill.color} h-3 rounded-full shadow-md`}
+        />
+      </div>
+    </div>
+  ))}
+</div>
             </div>
           </div>
         </motion.div>
@@ -149,9 +172,10 @@ function App() {
           <div className="space-y-6">
             {/* About Me */}
             <div>
-              <h2 className="text-lg font-bold text-white mb-3 bg-red-500 px-3 py-1 rounded-md inline-block shadow-sm">
-                👋 About Me
-              </h2>
+              <h2 className="text-lg font-bold text-white mb-3 bg-red-500 px-3 py-1 rounded-md inline-flex items-center gap-2 shadow-sm">
+  <User className="w-5 h-5 text-white" />
+  About Me
+</h2>
               <p className="text-sm text-white leading-relaxed">
                 I'm <strong>Reren</strong>, a passionate Front-End Developer & UI/UX Designer. I love creating beautiful, user-friendly websites and applications that not only look good but also feel intuitive and smooth to use. My goal is to turn ideas into interactive digital experiences that delight users.
               </p>
@@ -159,34 +183,72 @@ function App() {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
-              }}
-            >
-              {[{ label: "Completed Projects", value: "7" }, { label: "Average Rating", value: "⭐ 4/5" }, { label: "Clients Handled", value: "1" }].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ scale: 1.05, rotate: -1 }}
-                  className="bg-gradient-to-r from-red-200 via-red-400 to-red-600 border border-red-300 rounded-xl p-5 shadow-lg hover:shadow-2xl transition-all"
-                >
-                  <h4 className="text-xl font-bold">{stat.value}</h4>
-                  <p className="text-xs text-black mt-1">{stat.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+  className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
+  }}
+>
+  {[
+    {
+      label: (
+        <span className="inline-flex items-center gap-2">
+          <CheckCircle className="w-4 h-4 text-red-500" />
+          Completed Projects
+        </span>
+      ),
+      value: "7",
+    },
+    {
+      label: (
+        <span className="inline-flex items-center gap-2">
+          <Star className="w-4 h-4 text-red-500" />
+          Average Rating
+        </span>
+      ),
+      value: "4/5",
+    },
+    {
+      label: (
+        <span className="inline-flex items-center gap-2">
+          <Users className="w-4 h-4 text-red-500" />
+          Clients Handled
+        </span>
+      ),
+      value: "1",
+    },
+  ].map((stat, idx) => (
+    <motion.div
+      key={idx}
+      className="p-3 bg-gray-100 rounded-lg shadow text-center"
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200 } },
+      }}
+      whileHover={{
+        rotate: [0, 2, -2, 0], // efek goyang kanan-kiri
+        boxShadow: "0px 0px 15px rgba(255,0,0,0.4)", // glow merah
+      }}
+      whileTap={{ scale: 0.9 }}
+    >
+      <p className="text-lg font-bold text-gray-800">{stat.value}</p>
+      <p className="text-xs text-gray-600">{stat.label}</p>
+    </motion.div>
+  ))}  
+</motion.div>
+
           </div>
 
           {/* Bagian bawah */}
-          <div className="space-y-8">
+          <div className="space-y-9">
             {/* Education */}
             <div>
               <h3 className="text-lg font-semibold flex items-center gap-2 mb-4">
-                🎓 Education
-              </h3>
+  <GraduationCap className="w-5 h-5 text-red-500" />
+  Education
+</h3>
               <div className="grid grid-cols-5 gap-3">
                 {schools.map((school, idx) => (
                   <div
@@ -204,50 +266,94 @@ function App() {
             {/* Buttons */}
             <div className="flex gap-4 justify-center">
               <button
-                onClick={toggleProjectsModal}
-                className="px-4 py-2 bg-green-500 text-white rounded-full shadow hover:bg-green-600 transition transform hover:scale-105"
-              >
-                💻 Projects
-              </button>
-              <button
-                onClick={toggleExperienceModal}
-                className="px-4 py-2 bg-purple-500 text-white rounded-full shadow hover:bg-purple-600 transition transform hover:scale-105"
-              >
-                📜 Experience
-              </button>
-              <button
-                onClick={toggleLibrariesModal}
-                className="px-4 py-2 bg-yellow-500 text-white rounded-full shadow hover:bg-yellow-600 transition transform hover:scale-105"
-              >
-                🧩 Libraries
-              </button>
+  onClick={toggleProjectsModal}
+  className="px-4 py-2 bg-green-500 text-white rounded-full shadow hover:bg-green-600 transition transform hover:scale-105 inline-flex items-center gap-2"
+>
+  <Laptop className="w-4 h-4 text-red-500" />
+  Projects
+</button>
+
+<button
+  onClick={toggleExperienceModal}
+  className="px-4 py-2 bg-purple-500 text-white rounded-full shadow hover:bg-purple-600 transition transform hover:scale-105 inline-flex items-center gap-2"
+>
+  <ScrollText className="w-4 h-4 text-red-500" />
+  Experience
+</button>
+
+<button
+  onClick={toggleLibrariesModal}
+  className="px-4 py-2 bg-yellow-500 text-white rounded-full shadow hover:bg-yellow-600 transition transform hover:scale-105 inline-flex items-center gap-2"
+>
+  <Puzzle className="w-4 h-4 text-red-500" />
+  Libraries
+</button>
             </div>
           </div>
         </motion.div>
 
         {/* Contact Modal */}
         {showContact && (
-          <Modal title="📩 Contact Me" onClose={toggleContactModal}>
-            <p className="text-sm text-gray-700 mb-3">
-              Feel free to reach out to me via the following channels:
-            </p>
-            <ul className="text-sm text-gray-800 space-y-3">
-              <li>
-                📧 Email: <a href="mailto:paslanrr12@gmail.com" className="text-red-600 underline">paslanrr12@gmail.com</a>
-              </li>
-              <li>
-                📲 Instagram: <a href="https://www.instagram.com/rerendelrey" className="text-red-600 underline" target="_blank">@rerendelrey</a>
-              </li>
-              <li>
-                🎵 TikTok: <a href="https://www.tiktok.com/@redondorp" className="text-red-600 underline" target="_blank">reren</a>
-              </li>
-            </ul>
-          </Modal>
-        )}
+  <Modal
+  title={
+    <span className="inline-flex items-center gap-2">
+      <Mail className="w-5 h-5 text-red-500" />
+      Contact Me
+    </span>
+  }
+  onClose={toggleContactModal}
+>
+    <p className="text-sm text-gray-700 mb-3">
+      Feel free to reach out to me via the following channels:
+    </p>
+    <ul className="text-sm text-gray-800 space-y-3">
+      <li className="flex items-center gap-2">
+        <Mail className="w-4 h-4 text-red-600" />
+        Email:{" "}
+        <a
+          href="mailto:paslanrr12@gmail.com"
+          className="text-red-600 underline"
+        >
+          paslanrr12@gmail.com
+        </a>
+      </li>
+      <li className="flex items-center gap-2">
+        <Instagram className="w-4 h-4 text-red-600" />
+        Instagram:{" "}
+        <a
+          href="https://www.instagram.com/rerendelrey"
+          className="text-red-600 underline"
+          target="_blank"
+        >
+          @rerendelrey
+        </a>
+      </li>
+      <li className="flex items-center gap-2">
+        <Music2 className="w-4 h-4 text-red-600" />
+        TikTok:{" "}
+        <a
+          href="https://www.tiktok.com/@redondorp"
+          className="text-red-600 underline"
+          target="_blank"
+        >
+          reren
+        </a>
+      </li>
+    </ul>
+  </Modal>
+)}
 
         {/* Projects Modal */}
         {showProjects && (
-          <Modal title="💻 Projects" onClose={toggleProjectsModal}>
+          <Modal
+  title={
+    <span className="inline-flex items-center gap-2">
+      <Laptop className="w-5 h-5 text-red-500" />
+      Projects
+    </span>
+  }
+  onClose={toggleProjectsModal}
+>
             <div className="space-y-4">
               {[{ img: "/Data Customer.png", title: "Data Customer" }, { img: "/Esther Chakra.png", title: "Tampilan Chat GPT" }, { img: "/Menu.png", title: "Menu" }, { img: "/Form.png", title: "Form" }, { img: "/Project Dashboard Hotel.png", title: "Dashboard Hotel" }, { img: "/Table Const Data Siswa.png", title: "Table Data Siswa" }, { img: "/Table Data KTP.png", title: "Table Data KTP" }].map((project, idx) => (
                 <motion.div key={idx} whileHover={{ scale: 1.05 }} className="flex items-center gap-4 bg-gray-50 p-3 rounded-lg shadow-sm hover:shadow-md transition-all">
@@ -261,7 +367,15 @@ function App() {
 
         {/* Experience Modal */}
         {showExperience && (
-          <Modal title="📜 Experience" onClose={toggleExperienceModal}>
+          <Modal
+  title={
+    <span className="inline-flex items-center gap-2">
+      <ScrollText className="w-5 h-5 text-red-500" />
+      Experience
+    </span>
+  }
+  onClose={toggleExperienceModal}
+>
             <div className="space-y-4">
               <div className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg shadow-sm hover:shadow-md transition-all">
                 <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/c7/91/5f/zuri-express-lippo-cikarang.jpg?w=700&h=-1&s=1" alt="Zuri Express" className="w-12 h-12 object-cover rounded-full flex-shrink-0" />
@@ -277,20 +391,79 @@ function App() {
 
         {/* Libraries Modal */}
         {showLibraries && (
-          <Modal title="🧩 Libraries" onClose={toggleLibrariesModal}>
-            <div className="space-y-3">
-              {[{ name: "⚛️ React", link: "https://react.dev/" }, { name: "🌬️ Tailwind CSS", link: "https://tailwindcss.com/" }, { name: "📊 Recharts", link: "https://recharts.org/" }, { name: "✨ Lucide Icons", link: "https://lucide.dev/" }, { name: "🎨 shadcn/ui", link: "https://ui.shadcn.com/" }].map((lib, idx) => (
-                <motion.a key={idx} href={lib.link} target="_blank" whileHover={{ scale: 1.05 }} className="block p-3 bg-gray-100 rounded-lg shadow hover:shadow-md transition-all text-red-500 font-medium">
-                  {lib.name}
-                </motion.a>
-              ))}
-            </div>
-          </Modal>
-        )}
+  <Modal
+    title={
+      <span className="inline-flex items-center gap-2">
+        <PanelsTopLeft className="w-5 h-5 text-red-500" />
+        Libraries
+      </span>
+    }
+    onClose={toggleLibrariesModal}
+  >
+    <div className="space-y-3">
+      {[
+        {
+          name: "Laravel",
+          link: "https://laravel.com/",
+          icon: <FileCode2 className="w-4 h-4 text-red-600" />,
+        },
+        {
+          name: "React",
+          link: "https://react.dev/",
+          icon: <Atom className="w-4 h-4 text-blue-500" />,
+        },
+        {
+          name: "TypeScript",
+          link: "https://www.typescriptlang.org/",
+          icon: <Type className="w-4 h-4 text-sky-600" />,
+        },
+        {
+          name: "Tailwind CSS",
+          link: "https://tailwindcss.com/",
+          icon: <Wind className="w-4 h-4 text-teal-500" />,
+        },
+        {
+          name: "shadcn/ui",
+          link: "https://ui.shadcn.com/",
+          icon: <PanelsTopLeft className="w-4 h-4 text-yellow-500" />,
+        },
+        {
+          name: "TanStack",
+          link: "https://tanstack.com/",
+          icon: <Table2 className="w-4 h-4 text-green-600" />,
+        },
+        {
+          name: "Chakra UI",
+          link: "https://chakra-ui.com/",
+          icon: <LayoutDashboard className="w-4 h-4 text-purple-600" />,
+        },
+      ].map((lib, idx) => (
+        <motion.a
+          key={idx}
+          href={lib.link}
+          target="_blank"
+          whileHover={{ scale: 1.05 }}
+          className="flex items-center gap-2 p-3 bg-gray-100 rounded-lg shadow hover:shadow-md transition-all text-black font-medium"
+        >
+          {lib.icon}
+          {lib.name}
+        </motion.a>
+      ))}
+    </div>
+  </Modal>
+)}
 
         {/* School Modal */}
         {selectedSchool && (
-          <Modal title={`🏫 ${selectedSchool.name}`} onClose={() => setSelectedSchool(null)}>
+          <Modal
+  title={
+    <span className="inline-flex items-center gap-2">
+      <School className="w-5 h-5 text-red-500" />
+      {selectedSchool.name}
+    </span>
+  }
+  onClose={() => setSelectedSchool(null)}
+>
             <div className="flex flex-col items-center space-y-4">
               <img src={selectedSchool.src} alt={selectedSchool.name} className="w-20 h-20 object-contain" />
               <p className="text-sm text-gray-700 text-center">{selectedSchool.desc}</p>
@@ -309,7 +482,7 @@ const Modal = ({
   onClose,
   children,
 }: {
-  title: string;
+  title: React.ReactNode;
   onClose: () => void;
   children: React.ReactNode;
 }) => (
@@ -327,7 +500,12 @@ const Modal = ({
         transition={{ duration: 0.4 }}
         className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-2xl max-w-md w-full max-h-[80vh] overflow-y-auto relative"
       >
-        <button onClick={onClose} className="absolute top-2 right-3 text-gray-500 hover:text-red-700 text-lg font-bold">×</button>
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-3 text-red-500 hover:text-red-700 text-lg font-bold"
+        >
+          ×
+        </button>
         <h2 className="text-xl font-bold text-black mb-4">{title}</h2>
         {children}
       </motion.div>

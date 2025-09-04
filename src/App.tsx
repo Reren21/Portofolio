@@ -72,7 +72,7 @@ function App() {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center p-6 font-sans text-sm overflow-hidden">
+    <div className="relative min-h-screen flex items-start justify-center p-6 font-sans text-sm overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover -z-10"
@@ -83,7 +83,7 @@ function App() {
       />
       <FloatingBackground />
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+      <div className="w-full grid grid-cols-1 gap-2 relative z-10">
         {/* Left Panel */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -91,15 +91,23 @@ function App() {
           transition={{ duration: 0.6 }}
           className="md:col-span-1 bg-white/20 backdrop-blur-md rounded-3xl p-6 shadow-none border border-white/20 flex flex-col items-center text-center relative overflow-hidden"
         >
-          <img
-            src="/reren.jpg"
-            alt="Reren"
-            className="w-28 h-28 rounded-full object-cover border-4 border-black shadow-xl mb-4 transition-transform duration-500 hover:scale-110"
-          />
-          <h1 className="text-2xl font-bold text-white-600">REREN</h1>
-          <p className="text-xs text-black mt-1">Redondo Rui Paslan</p>
+          <div className="flex items-center gap-6 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+  {/* Foto Profile */}
+  <div className="flex-shrink-0">
+    <img
+      src="/reren.jpg"
+      alt="Reren"
+      className="w-28 h-28 rounded-full object-cover border-4 border-black shadow-xl transition-transform duration-500 hover:scale-110"
+    />
+  </div>
 
-          <div className="flex gap-3 mt-4">
+  {/* Teks & Kontak */}
+  <div className="flex flex-col justify-center">
+    <h1 className="text-3xl font-extrabold text-white">REREN</h1>
+    <p className="text-sm text-gray-300 mt-1">Redondo Rui Paslan</p>
+  </div>
+
+     <div className="flex gap-3 mt-4">
            <button
   onClick={toggleContactModal}
   className="px-5 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 transition-all duration-300 rounded-full text-xs shadow-md hover:scale-105 inline-flex items-center gap-2"
@@ -107,7 +115,8 @@ function App() {
   <Mail className="w-4 h-4" />
   Contact
 </button>
-          </div>
+</div>
+</div>
 
           {/* Skills */}
           <div className="mt-6 w-full">
@@ -166,19 +175,23 @@ function App() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="md:col-span-2 bg-red/100 backdrop-blur-md rounded-3xl p-6 shadow-none border border-white/50 relative overflow-hidden flex flex-col justify-between h-full"
+          className="md:col-span-1 bg-red/100 backdrop-blur-md rounded-3xl p-6 shadow-none border border-white/50 relative overflow-hidden flex flex-col justify-between h-full"
         >
           {/* Bagian atas */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             {/* About Me */}
             <div>
-              <h2 className="text-lg font-bold text-white mb-3 bg-red-500 px-3 py-1 rounded-md inline-flex items-center gap-2 shadow-sm">
-  <User className="w-5 h-5 text-white" />
-  About Me
-</h2>
-              <p className="text-sm text-white leading-relaxed">
-                I'm <strong>Reren</strong>, a passionate Front-End Developer & UI/UX Designer. I love creating beautiful, user-friendly websites and applications that not only look good but also feel intuitive and smooth to use. My goal is to turn ideas into interactive digital experiences that delight users.
-              </p>
+             <div className="flex justify-center">
+  <h2 className="text-lg font-bold text-white mb-3 bg-red-500 px-3 py-1 rounded-md inline-flex items-center justify-center gap-2 shadow-sm">
+    <User className="w-5 h-5 text-white" />
+    About Me
+  </h2>
+</div>
+
+              <p className="text-sm text-white leading-relaxed text-center">
+  I'm <strong>Reren</strong>, a passionate Front-End Developer & UI/UX Designer. I love creating beautiful, user-friendly websites and applications that not only look good but also feel intuitive and smooth to use. My goal is to turn ideas into interactive digital experiences that delight users.
+</p>
+
             </div>
 
             {/* Stats */}
@@ -242,13 +255,15 @@ function App() {
           </div>
 
           {/* Bagian bawah */}
-          <div className="space-y-9">
+          <div className="space-y-4">
             {/* Education */}
             <div>
-              <h3 className="text-lg font-semibold flex items-center gap-2 mb-4">
-  <GraduationCap className="w-5 h-5 text-red-500" />
-  Education
-</h3>
+          <h3 className="text-lg font-semibold flex items-center justify-center gap-2 my-3 
+                 bg-gradient-to-r from-black via-red-500 to-black
+                 px-3 py-1 rounded-md text-white shadow-sm w-full text-center">
+    <GraduationCap className="w-5 h-5 text-white" />
+    Education
+  </h3>
               <div className="grid grid-cols-5 gap-3">
                 {schools.map((school, idx) => (
                   <div

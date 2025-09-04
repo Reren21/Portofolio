@@ -423,7 +423,7 @@ function App() {
           icon: <Wind className="w-4 h-4 text-teal-500" />,
         },
         {
-          name: "shadcn/ui",
+          name: "Shadcn UI",
           link: "https://ui.shadcn.com/",
           icon: <PanelsTopLeft className="w-4 h-4 text-yellow-500" />,
         },

@@ -280,30 +280,31 @@ function App() {
 
             {/* Buttons */}
             <div className="flex gap-4 justify-center">
-              <button
-  onClick={toggleProjectsModal}
-  className="px-4 py-2 bg-green-500 text-white rounded-full shadow hover:bg-green-600 transition transform hover:scale-105 inline-flex items-center gap-2"
->
-  <Laptop className="w-4 h-4 text-red-500" />
-  Projects
-</button>
+  <button
+    onClick={toggleProjectsModal}
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+  >
+    <Laptop className="w-4 h-4 text-red-500" />
+    Projects
+  </button>
 
-<button
-  onClick={toggleExperienceModal}
-  className="px-4 py-2 bg-purple-500 text-white rounded-full shadow hover:bg-purple-600 transition transform hover:scale-105 inline-flex items-center gap-2"
->
-  <ScrollText className="w-4 h-4 text-red-500" />
-  Experience
-</button>
+  <button
+    onClick={toggleExperienceModal}
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+  >
+    <ScrollText className="w-4 h-4 text-red-500" />
+    Experience
+  </button>
 
-<button
-  onClick={toggleLibrariesModal}
-  className="px-4 py-2 bg-yellow-500 text-white rounded-full shadow hover:bg-yellow-600 transition transform hover:scale-105 inline-flex items-center gap-2"
->
-  <Puzzle className="w-4 h-4 text-red-500" />
-  Libraries
-</button>
-            </div>
+  <button
+    onClick={toggleLibrariesModal}
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+  >
+    <Puzzle className="w-4 h-4 text-red-500" />
+    Libraries
+  </button>
+</div>
+
           </div>
         </motion.div>
 

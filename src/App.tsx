@@ -104,7 +104,7 @@ function App() {
   {/* Teks & Kontak */}
   <div className="flex flex-col justify-center">
     <h1 className="text-3xl font-extrabold text-white">REREN</h1>
-    <p className="text-sm text-gray-300 mt-1">Redondo Rui Paslan</p>
+    <p className="text-sm text-black mt-1">Redondo Rui Paslan</p>
   </div>
 
      <div className="flex gap-3 mt-4">
@@ -120,7 +120,7 @@ function App() {
 
           {/* Skills */}
           <div className="mt-6 w-full">
-            <div className="bg-gray-100/50 border border-red-100/30 rounded-xl p-4 w-full text-center shadow-inner">
+            <div className="bg-gray-100/40 border border-red-100/30 rounded-xl p-4 w-full text-center shadow-inner">
               <h3 className="text-sm font-bold mb-3 bg-black px-6 py-1 rounded-md inline-flex items-center gap-2 shadow-sm text-white">
   <Wrench className="w-4 h-4 text-red-500" />
   Skills

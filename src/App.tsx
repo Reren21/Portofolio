@@ -89,30 +89,30 @@ function App() {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="md:col-span-1 bg-white/20 backdrop-blur-md rounded-3xl p-6 shadow-none border border-white/20 flex flex-col items-center text-center relative overflow-hidden"
+          className="md:col-span-1 bg-white/20 dark:bg-gray-900/30 backdrop-blur-md rounded-3xl p-6 shadow-none border border-white/20 dark:border-gray-700 flex flex-col items-center text-center relative overflow-hidden"
         >
-          <div className="flex items-center gap-6 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+          <div className="flex items-center gap-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-md p-6 rounded-2xl shadow-lg w-full">
   {/* Foto Profile */}
   <div className="flex-shrink-0">
     <img
       src="/reren.jpg"
       alt="Reren"
-      className="w-28 h-28 rounded-full object-cover border-4 border-black shadow-xl transition-transform duration-500 hover:scale-110"
+      className="w-28 h-28 rounded-full object-cover border-4 border-black dark:border-white shadow-xl transition-transform duration-500 hover:scale-110"
     />
   </div>
 
   {/* Teks & Kontak */}
-  <div className="flex flex-col justify-center">
-    <h1 className="text-3xl font-extrabold text-white">REREN</h1>
-    <p className="text-sm text-black mt-1">Redondo Rui Paslan</p>
+  <div className="flex-1 flex flex-col justify-center items-start">
+    <h1 className="text-3xl font-extrabold text-black dark:text-white">REREN</h1>
+    <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">Redondo Rui Paslan</p>
   </div>
 
-     <div className="flex gap-3 mt-4">
+     <div className="flex justify-center mt-4 w-full">
            <button
   onClick={toggleContactModal}
-  className="px-5 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 transition-all duration-300 rounded-full text-xs shadow-md hover:scale-105 inline-flex items-center gap-2"
+  className="px-5 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 dark:from-red-500 dark:to-red-600 transition-all duration-300 rounded-full text-xs shadow-md hover:scale-105 inline-flex items-center gap-2"
 >
-  <Mail className="w-4 h-4" />
+  <Mail className="w-4 h-4 text-white dark:text-red-400" />
   Contact
 </button>
 </div>
@@ -282,25 +282,25 @@ function App() {
             <div className="flex gap-4 justify-center">
   <button
     onClick={toggleProjectsModal}
-    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800  dark:bg-gray-800 dark:hover:bg-gray-700 transition transform hover:scale-105 inline-flex items-center gap-2"
   >
-    <Laptop className="w-4 h-4 text-red-500" />
+    <Laptop className="w-4 h-4 text-red-500 dark:text-red-400" />
     Projects
   </button>
 
   <button
     onClick={toggleExperienceModal}
-    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 transition transform hover:scale-105 inline-flex items-center gap-2"
   >
-    <ScrollText className="w-4 h-4 text-red-500" />
+    <ScrollText className="w-4 h-4 text-red-500 dark:text-red-400" />
     Experience
   </button>
 
   <button
     onClick={toggleLibrariesModal}
-    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 transition transform hover:scale-105 inline-flex items-center gap-2"
+    className="px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 transition transform hover:scale-105 inline-flex items-center gap-2"
   >
-    <Puzzle className="w-4 h-4 text-red-500" />
+    <Puzzle className="w-4 h-4 text-red-500 dark:text-red-400" />
     Libraries
   </button>
 </div>
